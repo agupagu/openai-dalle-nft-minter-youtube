@@ -2,11 +2,13 @@
 
 import { ConnectWallet, MediaRenderer, ThirdwebProvider, embeddedWallet, useAddress, useSDK } from "@thirdweb-dev/react";
 import { useState } from "react";
+import { BaseGoerli } from "@thirdweb-dev/chains";
+
 
 export default function Home() {
   return (
     <ThirdwebProvider
-      activeChain="<chain_id>"
+      activeChain={BaseGoerli}
       clientId={process.env.NEXT_PUBLIC_CLIENT_ID}
       supportedWallets={[
         embeddedWallet()
