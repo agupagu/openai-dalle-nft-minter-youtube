@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@thirdweb-dev/engine": "^0.0.1",
-    "@thirdweb-dev/react": "^4.1.1",
-    "@thirdweb-dev/sdk": "^4.0.10",
-    "ethers": "^5.7.2",
+    "@thirdweb-dev/react": "^4.9.4",
+    "@thirdweb-dev/sdk": "^4.0.99",
+    "ethers": "^5.8.0",
     "next": "14.0.1",
-    "openai": "^4.16.1",
+    "openai": "^4.90.0",
     "react": "^18",
     "react-dom": "^18"
   },

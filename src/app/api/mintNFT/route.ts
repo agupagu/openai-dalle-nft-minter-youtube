@@ -6,6 +6,7 @@ const {
     THIRDWEB_SECRET_KEY,
     BACKEND_WALLET_ADDRESS,
     CHAIN_ID,
+    ACCESS_TOKEN
 } = process.env;
 
 export async function POST(req: Request) {
@@ -30,7 +31,7 @@ export async function POST(req: Request) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${THIRDWEB_SECRET_KEY}`,
+                Authorization: `Bearer ${ACCESS_TOKEN}`,
                 "x-backend-wallet-address": BACKEND_WALLET_ADDRESS,
             },
             body: JSON.stringify({

@@ -1,17 +1,18 @@
 "use client";
 
-import { ConnectWallet, MediaRenderer, ThirdwebProvider, embeddedWallet, useAddress, useSDK } from "@thirdweb-dev/react";
+import { ConnectWallet, MediaRenderer, ThirdwebProvider, embeddedWallet, metamaskWallet, useAddress, useSDK } from "@thirdweb-dev/react";
 import { useState } from "react";
-import { BaseGoerli } from "@thirdweb-dev/chains";
+import { BaseSepoliaTestnet } from "@thirdweb-dev/chains";
 
 
 export default function Home() {
   return (
     <ThirdwebProvider
-      activeChain={BaseGoerli}
+      activeChain={BaseSepoliaTestnet}
       clientId={process.env.NEXT_PUBLIC_CLIENT_ID}
       supportedWallets={[
-        embeddedWallet()
+        embeddedWallet(),
+        metamaskWallet()
       ]}
     >
       <ClaimPage />
@@ -178,7 +179,7 @@ const ClaimPage = () => {
                   width: "400px",
                   padding: "10px",
                   marginTop: "10px",
-                  cursor: "pointer"
+                  cursor: "pointer",
                 }}
               >{
                 isMinted ? "Generate Another" : "Re-Generate"
@@ -194,6 +195,7 @@ const ClaimPage = () => {
                 style={{
                   width: "400px",
                   padding: "10px",
+                  fontFamily: "var(--source-code-pro)"
                 }}
               />
               <button
@@ -202,7 +204,8 @@ const ClaimPage = () => {
                   width: "400px",
                   padding: "10px",
                   marginTop: "10px",
-                  cursor: "pointer"
+                  cursor: "pointer",
+                  fontFamily: "var(--source-code-pro)"
                 }}
                 disabled={isLoading}
               >{
